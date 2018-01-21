@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script
+  src="https://code.jquery.com/jquery-3.3.0.min.js"
+  integrity="sha256-RTQy8VOmNlT6b2PIRur37p6JEBZUE7o8wPgMvu18MC4="
+  crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+    <title>Giphy Search</title>
+</head>
+<body>
+    <div id="searchGifs">
+        <label for"userRating">Choose a rating...wisely and then click a button</label>
+        <select id="userRating">
+            <option value="y">Y</option>
+            <option value="g">G</option>
+            <option value="pg-13">PG-13</option>
+            <option value="r">R</option>
+        </select>
+        <div id="gifButtons"></div>
+    </div>
+     
+    
+    
+    <form action="">
+        <label for="term">Please enter a search term to add to list</label>
+        <input id="term"><br>
+        <button id="submit">Submit</button>
+       
+        
+    </form>
+    <div id="gifs"></div>
+    <script src="assets/javascript/giphySearch.js"></script>
+</body>
+</html>

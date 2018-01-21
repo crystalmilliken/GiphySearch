@@ -1,0 +1,10 @@
+.imgDivs{
+    float:left;
+    padding:10px;
+}
+#searchGifs{
+    padding-bottom:2em;
+}
+#gifButtons{
+    margin-top:.5em;
+}
