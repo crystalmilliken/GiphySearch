@@ -3,6 +3,7 @@ let arrGifs = ["developer", "scientist", "engineer", "farmer", "astronomer"];
 let arrOfGifs = [];
 //function takes an array of terms and creates buttons
 function createButtons(){
+    document.getElementById("term").value = '';
     let mainButtonDiv = document.getElementById("gifButtons");
     mainButtonDiv.innerHTML = '';
     arrGifs.forEach(function(element) {
@@ -74,13 +75,21 @@ function getGif(e){
         .done(function(response){
             let arrData = response.data;
             if(arrData.length > 0){
+                 if(searchTerm === "sex" || searchTerm === "porn"){
+                    divToPopulate.innerHTML = "Oops, this isn't that kind of show...Try nice instead of naughty";
+                    arrGifs.pop();
+                    createButtons();
+                }else{
                 arrData.forEach(function(e){
                 let newObj = {"name": searchTerm, "still":e.images.fixed_height_still.url, "animate":e.images.fixed_height.url, "state":"still", "id": e.id, "rating":e.rating}
                 arrOfGifs.push(newObj);
-            })
-            populateDivs();
+                })
+                populateDivs();
+                }
             }else{
-                divToPopulate.innerHTML = "I'm sorry, something went webkitConvertPointFromNodeToPage. Try a different term maybe?";
+                divToPopulate.innerHTML = "I'm sorry, something went wrong. Try a different term maybe?";
+                arrGifs.pop();
+                createButtons();
             }   
         })
         .fail(function(){
